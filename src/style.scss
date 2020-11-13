@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:focus {
+        outline: 0;
+    }
+}
+body {
+    background: #e3e3e3;
+    
+}
+.loading {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 40%;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    h3 {
+        padding: 10px 0;
+        text-align: center;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .todoForm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .todoInput {
+            width: 90%;
+            border: 1px solid #E9E9E9;
+            border-radius: 5px;
+            padding : 10px;
+            margin: 10px;
+        }
+        .btn {
+            width: 10%;
+            background: none;
+            padding: 10px;
+            border: 1px solid #E9E9E9;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+            cursor: pointer;
+        }
+    }
+    .todoList {
+        display: flex;
+        flex-direction: column;
+        .todoListItem {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #DCDCDC;
+            padding : 10px;
+            align-items: center;
+            &:last-of-type {
+                border-bottom: none;
+            }
+            span {
+                margin : 0 5px;
+            }
+            .done {
+                text-decoration:line-through
+            }
+            .deleted {
+                text-align: center;
+                font-weight: bold;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                color: #fff;
+                background-color: #CECECE;
+                cursor: pointer;
+            }
+        }
+    }
+}
