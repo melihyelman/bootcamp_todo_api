@@ -4,7 +4,7 @@ import { createTodo } from "../services/api";
 
 const Form = ({ todos, getAllTodos }) => {
   const [input, setInput] = useState("");
-  const [todo, setTodo] = useState({ user: "melihyelman" });
+  const [todo, setTodo] = useState({ title: "", user: "melihyelman" });
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -21,16 +21,15 @@ const Form = ({ todos, getAllTodos }) => {
       alert("Todo already declared");
       setInput("");
     } else {
-      setTodo({
-        title: e.target[0].defaultValue,
-        user: "melihyelman",
-      });
+      setTodo((todo.title = e.target[0].defaultValue));
       try {
         await createTodo(todo);
       } catch (err) {
         setError(err);
       }
       setInput("");
+
+      setTodo({ title: "", user: "melihyelman" });
       getAllTodos();
     }
 
